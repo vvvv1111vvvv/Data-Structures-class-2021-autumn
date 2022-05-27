@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.28
 
 1. 목적:  고급정렬의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -22,7 +22,7 @@
 '''
 def sort(data):
 
-    for j in range(len(data)-1):                 
+    for j in range(len(data)-1):
         c=False                             #교환 정지시 탈출 하도록 설계
         for i in range (len(data)-1-j):
             if data[i]>data[i+1]:           #i번째 idx의 데이터가 i+1번째 idx의 데이터 보다 크면
@@ -34,9 +34,8 @@ def sort(data):
             return                              #정렬이 되어있으므로 반환
 import random                                #난수 발생함수 randint 사용을 위한 random모듈 import
 data=[]                                         #데이터 저장을 위한 리스트
-for i in range(10):                             #랜덤한 정수 10개를 데이터에 추가     
+for i in range(10):                             #랜덤한 정수 10개를 데이터에 추가
     data.append(random.randint(1,9999))
 print(data)         #정렬 안된 data출력
 sort(data)          #오름차순 버블 정렬함수 sort()호출
 print(data)         #오름차순 버블 정렬된 리스트 출력
-

@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.11
 
 1. 목적: 이진탐색트리의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -33,7 +33,7 @@ class BinarySearchTree():       #이진탐색트리를 위한 트리 클래스
     def search_bst(self,n,key):
         '''
         이진탐색트리 탐색연산(순환함수)
-        입력: n(노드, 초기에는 루트), 찾고자하는 key 
+        입력: n(노드, 초기에는 루트), 찾고자하는 key
         출력: key의 노드
         '''
         if n==None:     #찾고자 하는 key 값이 없으면
@@ -78,24 +78,24 @@ class BinarySearchTree():       #이진탐색트리를 위한 트리 클래스
             r=n
             self.root=r
             return True
-        while r !=None:                          
-            if n.key<r.key:                          #삽입하고자 하는 key값 r노드의 키 값보다 작으면   
+        while r !=None:
+            if n.key<r.key:                          #삽입하고자 하는 key값 r노드의 키 값보다 작으면
                 if r.left is None:                   #r노드의 좌측 자식이 없으면
                     r.left=n                         #r노드의 좌측에 삽입
                     return True
-                else: 
+                else:
                     r=r.left                         #r노드를 좌측 자식으로 삽입
             elif r.key<n.key:                        #삽입하고자 하는 key값 r노드의 키 값보다 크면
                 if r.right is None:                  #r노드의 우측 자식이 없으면
                     r.right=n                        #r노드의 우측에 삽입
                     return True
-                else:                                   #r노드의 우측에 자식이 있으면 
+                else:                                   #r노드의 우측에 자식이 있으면
                     r=r.right                     #r노드를 우측 자식으로 삽입
             else:                                       #이미 key값이 존재하면 False를 반환
-                return False            
+                return False
 
     def delete_bst_case1(self,parent,node,root): #case 1 : 단말노드의 삭제
-        if parent is None:          
+        if parent is None:
             self.root =None
         else:
             if parent.left==node:
@@ -126,7 +126,7 @@ class BinarySearchTree():       #이진탐색트리를 위한 트리 클래스
             succp.left=succ.right       #후계자의 오른쪽 자식을 부모노드에 연결
         else:
             succp.right=succ.right      #후게자가 오른쪽자식이면
-        
+
         node.key=succ.key
         node.value=succ.value
         node=succ
@@ -141,7 +141,7 @@ class BinarySearchTree():       #이진탐색트리를 위한 트리 클래스
             parent=node
             if key<node.key: node =node.left
             else: node=node.right
-        
+
         if node==None:                                      #삭제할 노드가 없을 때
             return None
         if node.left==node and node.right==None:            #case 1 단말노드
@@ -168,9 +168,9 @@ inputList=[11,3,4,1,56,5,6,2,98,32,23]
 print("정렬 전: ",inputList)
 
 #3. 배열에 들어있는 숫자들은 이진탐색트리에 추가
-for i in inputList:        
+for i in inputList:
     a.insert_bst(a.root,BSTNode(i,'0'))
 
 #4. 정렬 후 배열을 출력
 print("정렬 후: ",end='')
-a.inorder(a.root)        
+a.inorder(a.root)

@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.10.15
 
 1. 목적: 연결된 구조를 활용하는 방법에 대해 실습한다.
@@ -8,7 +8,7 @@
 
 
 3. 방법 : p6.3절의 연결된 리스트 알고리즘을 활용한다.
-          
+
 알고리즘:
 #1. addrear() : elememt를 rear에 삽입한다.
 #2. addfront() : elememt를 front에 삽입한다.
@@ -80,11 +80,11 @@ class DoubleLinkedDeque():
     def addrear(self, elem):
         if self.isEmpty():
             self.front=self.rear=DNode(elem,self.rear,None)
-        else: 
+        else:
             n=DNode(elem,self.rear,None)
             self.rear.next=n
             self.rear=n
-#2. addfront() : elememt를 front에 삽입한다.     
+#2. addfront() : elememt를 front에 삽입한다.
     def addfront(self, elem):
         if self.isEmpty():
             self.front=self.rear=DNode(elem,None,self.front)
@@ -125,5 +125,3 @@ A.deletefront()
 A.deletefront()
 A.addfront(100)
 A.display()
-
-

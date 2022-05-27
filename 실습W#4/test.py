@@ -1,5 +1,5 @@
 '''
-작성자: 박수영 07mak8mgt@.uos.ac.kr
+작성자: vvvv1111vvvv
 작성일 2021.09.30
 
 1. 목적: 스택을 활용하는 방법에 대해 실습한다.
@@ -51,6 +51,3 @@ print("push 5회 :", top)
 print("pop()==> ",pop())
 print("pop()==> ",pop())
 print("pop 2회 ==> ",top)
-
-
-

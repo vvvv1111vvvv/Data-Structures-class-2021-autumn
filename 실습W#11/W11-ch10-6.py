@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.18
 
 1. 목적: 그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -15,17 +15,17 @@
 #3. find_bridge()
     #3-1. 그래프의 key와 진출간선에 대해서 graph를 newgraph에 복사한다.
     #3-2. removed_graph(newgraph,i,k)함수를 호출하여 vertex i와 j사이의 간선이 삭제된 그래프를 반환받는다.
-    #3-3. find_connected_component() 함수를 호출하여 연결성분검사를 진행한다. 연결성분이 1이 아니라면, 
+    #3-3. find_connected_component() 함수를 호출하여 연결성분검사를 진행한다. 연결성분이 1이 아니라면,
             i,j 간선 삭제가 그래프의 성분을 나누었으므로 브릿지(i,k)를 출력한다.
-#4. 
+#4.
 '''
-    
+
 import queue
 import copy
 def find_bridge(graph):     #브릿지를 출력하는 함수
     for i in graph.keys():          # 그래프의 key와 진출간선에 대해서
         for j in graph[i]:
-            for k in j: 
+            for k in j:
                 newgraph=copy.deepcopy(graph)
                 newgraph=removed_graph(newgraph,i,k)
                 if find_connected_component(list(graph.keys()),newgraph)!=1:
@@ -64,7 +64,7 @@ def find_connected_component(newgraph):
         if vtx not in visited:
             color=dfs_cc(newgraph,[],vtx,visited)
             colorList.append(color)
-    
+
     return len(colorList)==1
 def dfs_cc(newgraph,color,vertex,visited):
     if vertex not in visited:
@@ -73,12 +73,12 @@ def dfs_cc(newgraph,color,vertex,visited):
         nbr=newgraph[vertex]-visited
         for v in nbr:
             dfs_cc(newgraph,color,v,visited)
-    return color     
+    return color
 '''
 def removed_graph(newgraph,key1,key2):     #key1과 key2사이의 간선을 삭제한뒤, 그래프를 반환하는 함수
 
-    s1=newgraph[key1] 
-    s1.remove(key2) 
+    s1=newgraph[key1]
+    s1.remove(key2)
     newgraph[key1] = s1
 
     s2=newgraph[key2]

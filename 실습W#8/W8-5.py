@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.04
 
 1. 목적: 트리의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -11,7 +11,7 @@
 #1. 이진트리에 value를 입력한다.
 #2 전위 순회로 이진트리를 출력한다,
 #3. path_length()를 호출하여 경로의 길이를 반환 받아 출력한다.
-    #3-1. 길이 저장을 위한 변수 rounds 선언  
+    #3-1. 길이 저장을 위한 변수 rounds 선언
     #3-2. 왼쪽 자식이 존재하면 재귀함수를 호출하고 깊이를 1더한다. 반환된 값을 round에 입력
     #3-3. 오른쪽 자식이 존재하면 재귀함수를 호출하고 깊이를 1더한다. 반환된 값을 round에 입력
     #3-4. round 값을 반환
@@ -59,11 +59,11 @@ class TNode:
         if n is not None:
             self.inorder(n.left)
             print(n.data,end='')
-            self.inorder(n.right)      
+            self.inorder(n.right)
     def postorder(self,n):    #LRV 후위 순회
         if n is not None:
             self.postorder(n.left)
-            self.postorder(n.right)     
+            self.postorder(n.right)
             print(n.data,end='')
     def levelorder(self,root):        #레벨 순회
         self.queue=CircularQueue()    #원형 큐 객체 초기화
@@ -96,9 +96,9 @@ class TNode:
             return hRight+1
 
 
-    def getlevelnode(self,node, data,level):    
+    def getlevelnode(self,node, data,level):
         if node ==None:         #만약, 입력된 노드가 None이면 0을 반환
-            return 0  
+            return 0
         if node.data==data:     #만약, 입력된 노드의 데이터가 구하고자 하는 데이터와 동일하다면
             return level        # level을 반환
         downlevel = self.getlevelnode(node.left,data,level+1)   #위의 조건문이 실행되지 않으면, 하위 노드를 순회하여 연산
@@ -106,8 +106,8 @@ class TNode:
         if (downlevel != 0):        #만약 하위 레벨이 0이 아니면
             return downlevel        #하위 레벨을 반환
         downlevel = self.getlevelnode(node.right,data,level+1) #right.node의 레벨을 찾는다.
-        return downlevel    
-  
+        return downlevel
+
     def levelnode(self,node,data):
 
         return self.getlevelnode(node,data,1)
@@ -116,16 +116,16 @@ class TNode:
             return 0
         left=self.calc_height(node.left)    #왼쪽 노드와 오른쪽 노드의 높이를 비교한다.
         print("left: ",left)
-        right=self.calc_height(node.right) 
+        right=self.calc_height(node.right)
         print("right: ",right)
         if left==right+1 or left+1==right or left==right: #왼쪽노드와 오른쪽 노드의 높이차가 1이하이면 하위 노드에 대해 is_balenced()연산을 실행한다.
             self.is_balenced(node.left)
             self.is_balenced(node.right)
         else:
             return False    #높이차가 2이상이면 False를 출력
-            
+
     def path_length(self,depth=0):                          #이진트리의 경로의 길이를 출력하는 함수
-        rounds = depth                                      #길이 저장을 위한 변수 rounds 선언     
+        rounds = depth                                      #길이 저장을 위한 변수 rounds 선언
         if self.left:                                       #왼쪽 자식이 존재하면
             rounds += self.left.path_length(depth + 1)          #재귀함수를 호출하고 깊이를 1더한다. 반환된 값을 round에 입력
         if self.right:                                      #오른쪽 자식이 존재하면

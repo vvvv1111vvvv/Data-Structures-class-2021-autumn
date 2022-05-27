@@ -1,5 +1,5 @@
 '''
-작성자: 박수영 07mak8mgt@office.uos.ac.kr
+작성자: vvvv1111vvvv
 작성일: 2021.10.07
 
 1. 목적: 큐와 덱을 활용하는 방법을 실습한다.
@@ -9,7 +9,7 @@
 알고리즘:
 1. 수를 키보드로부터 입력받는다.
 2. 길이가 3인 원형 큐를 만든다.
-3. 입력한 수 번째 피보나치항을 찾기 위해 front 2개를 더한 값을 rear 다음에 삽입하는 연산을 n-1번 반복한다. 
+3. 입력한 수 번째 피보나치항을 찾기 위해 front 2개를 더한 값을 rear 다음에 삽입하는 연산을 n-1번 반복한다.
 4. rear의 값을 출력한다.
 '''
 max_size=3
@@ -41,7 +41,7 @@ n= int(input())
 q=CircularQueue()
 q.enqueue(0)
 q.enqueue(1)
-#3. 입력한 수 번째 피보나치항을 찾기 위해 front 2개를 더한 값을 rear 다음에 삽입하는 연산을 n-1번 반복한다. 
+#3. 입력한 수 번째 피보나치항을 찾기 위해 front 2개를 더한 값을 rear 다음에 삽입하는 연산을 n-1번 반복한다.
 for i in range(n-1):
     z=q.items[(q.front+1)%max_size]+q.items[(q.front+2)%max_size]
     q.dequeue()

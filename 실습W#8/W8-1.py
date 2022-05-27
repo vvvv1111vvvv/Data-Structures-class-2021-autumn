@@ -1,14 +1,14 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.04
 
 1. 목적: 트리의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
-2. 문제 : 실습 8.1 :    1. 트리를 연결된 구조로 표현하고 
+2. 문제 : 실습 8.1 :    1. 트리를 연결된 구조로 표현하고
                        2. 네가지 순회방법으로 노드를 방문한 결과를 출력
                         3. 각 트리의 노드 개수와 단말노드의 개수및 트리의 높이 출력
 
 3. 방법 : 8.3절의 함수와 테스트 코드를 사용한다..
-          
+
 
 '''
 max_size=30
@@ -52,11 +52,11 @@ class TNode:
         if n is not None:
             self.inorder(n.left)
             print(n.data,end='')
-            self.inorder(n.right)      
+            self.inorder(n.right)
     def postorder(self,n):    #LRV 후위 순회
         if n is not None:
             self.postorder(n.left)
-            self.postorder(n.right)     
+            self.postorder(n.right)
             print(n.data,end='')
     def levelorder(self,root):        #레벨 순회
         self.queue=CircularQueue()    #원형 큐 객체 초기화

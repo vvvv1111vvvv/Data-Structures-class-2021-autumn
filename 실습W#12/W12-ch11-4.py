@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.25
 
 1. 목적: 가중치그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -71,9 +71,9 @@ def MSTPrim(vertex,adj):
         print(vertex[u],end=' ')    #u번째 정점을 출력
         if adj[oldU][u] is not None:    #[A][A]가 None인 case 제외
             sum+=adj[oldU][u]           #추가된 정점과 이전 정점 사이의 가중치를 sum에 더한다.
-        oldU=u                      #이전 정점의 인데스 
-        for v in range(vsize):      #내부루프 
-            if (adj[u][v] !=None): #정점 u와 정점 v 사이에 간선이 있으면  
+        oldU=u                      #이전 정점의 인데스
+        for v in range(vsize):      #내부루프
+            if (adj[u][v] !=None): #정점 u와 정점 v 사이에 간선이 있으면
                 if selected!=True and adj[u][v]<dist[v]: #선택되지않았고, 가중치가 이전에 저장된 값보다 작으면
                     dist[v]=adj[u][v]       #정점u,v 사이의 거리가 mst에서  정점v까지의 최단거리
     print("\n정점의 가중치의 합 : %d"%(sum))
@@ -86,6 +86,6 @@ weight = [ [None,	29,		None,	None,	None,   10,		None],
            [None,	None,   12,		None,	22,		None,	18  ],
            [None,	None,	None,   22,		None,	27,		25  ],
            [10,	None,	None,	None,   27,		None,	None],
-           [None,  15,		None,   18,		25,		None,	None]]   
+           [None,  15,		None,   18,		25,		None,	None]]
 print("MST by Prim's Algorithm")
 MSTPrim(vertex,weight)

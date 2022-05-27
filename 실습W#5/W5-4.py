@@ -1,5 +1,5 @@
 '''
-작성자: 박수영 07mak8mgt@office.uos.ac.kr
+작성자: vvvv1111vvvv
 작성일: 2021.10.07
 
 1. 목적: 큐와 덱을 활용하는 방법을 실습한다.
@@ -58,7 +58,7 @@ class Circulardeque(CircularQueue):
 def find(a):
     '''
     함수명 : find()
-    목적 : 입력받은 문자열의 대소문자를 제외한 부분을 탈락시킨다, 
+    목적 : 입력받은 문자열의 대소문자를 제외한 부분을 탈락시킨다,
     입력 : 문자열 a
     returns : 문자열 a의 대소문자 만을 데이터로 갖는 리스트
     '''
@@ -69,7 +69,7 @@ def find(a):
 a=Circulardeque()
 import re #re모듈을 사용
 #1. 문자열을 키보드로부터 입력받는다.
-n=input()  
+n=input()
 
 #2. 입력받은 문자열의 대소문자를 제외한 부분을 탈락시킨다.
 n=find(n)
@@ -89,5 +89,3 @@ for i in range(0,int(l/2)):
         print("회문이 아닙니다.")
         quit()
 print("회문입니다.")
-
-

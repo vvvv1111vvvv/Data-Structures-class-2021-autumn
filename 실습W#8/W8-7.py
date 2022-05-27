@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.11
 
 1. 목적: 트리의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -115,10 +115,3 @@ print("b : isMaxHeap ? :")
 print(b.isMaxHeapRecur(1))
 print("c : isMaxHeap ? :")
 print(c.isMaxHeapRecur(1))
-
-
-
-
-
-
-

@@ -1,9 +1,9 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.11
 
 1. 목적: 이진탐색트리의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
-2. 문제 : 실습 9.4: 9.3절의 이진탐색트리를 이용하여 우선순위 큐를 구현하고 동작을 테스트하라  
+2. 문제 : 실습 9.4: 9.3절의 이진탐색트리를 이용하여 우선순위 큐를 구현하고 동작을 테스트하라
 3. 방법 : 9.3 절의 함수와 테스트 코드를 응용한다.
 
 알고리즘
@@ -38,27 +38,27 @@ class BSTMap():
         return self.search_bst(self.root,key)
     def searchValue(self,key):
         return self.search_Value_bst(self.root,key)
-    def findMax(self): 
+    def findMax(self):
         return self.search_max_bst(self.root)
-    def findMin(self): 
+    def findMin(self):
         return self.search_min_bst(self.root)
-#2. enqueue() : 무작위로 정렬된 배열의 element를 맵에 삽입한다.        
-    def enqueue(self,key,value=None):          
+#2. enqueue() : 무작위로 정렬된 배열의 element를 맵에 삽입한다.
+    def enqueue(self,key,value=None):
         n=BSTNode(key,value)
         if self.isEmpty():
             self.root=n
         else:
             self.insert_bst(self.root,n)
 #3. dequeue() : 삽입된 element는 이진탐색트리의 구조를 가진다.
-    def dequeue(self):        
-    #-1-. 우선순위가 가장 높은 key는 최대키를 탐색하는 메소드를 활용해 구한다.                 
+    def dequeue(self):
+    #-1-. 우선순위가 가장 높은 key는 최대키를 탐색하는 메소드를 활용해 구한다.
         x=self.findMax().key
     #-2-. 우선순위가 가장 높은 key를 delete()한다.
         self.delete(self.findMax().key)
     #-3-. value값을 반환한다.
-        return x   
+        return x
 #4. peek() : 최대키를 탐색한 뒤 key값을 반환한다.
-    def peek(self):                            
+    def peek(self):
         return self.findMax().key
     def delete(self,key):
         self.root=self.delete_bst(self.root,key)
@@ -66,12 +66,12 @@ class BSTMap():
         print(msg,end='')
         self.inorder(self.root)
         print()
-    
+
 
     def search_bst(self,n,key):
         '''
         이진탐색트리 탐색연산(순환함수)
-        입력: n(노드, 초기에는 루트), 찾고자하는 key 
+        입력: n(노드, 초기에는 루트), 찾고자하는 key
         출력: key의 노드
         '''
         if n==None:     #찾고자 하는 key 값이 없으면
@@ -126,24 +126,24 @@ class BSTMap():
             r=n
             self.root=r
             return True
-        while r !=None:                          
-            if n.key<r.key:                          #삽입하고자 하는 key값 r노드의 키 값보다 작으면   
+        while r !=None:
+            if n.key<r.key:                          #삽입하고자 하는 key값 r노드의 키 값보다 작으면
                 if r.left is None:                   #r노드의 좌측 자식이 없으면
                     r.left=n                         #r노드의 좌측에 삽입
                     return True
-                else: 
+                else:
                     r=r.left                         #r노드를 좌측 자식으로 삽입
             elif r.key<n.key:                        #삽입하고자 하는 key값 r노드의 키 값보다 크면
                 if r.right is None:                  #r노드의 우측 자식이 없으면
                     r.right=n                        #r노드의 우측에 삽입
                     return True
-                else:                                   #r노드의 우측에 자식이 있으면 
+                else:                                   #r노드의 우측에 자식이 있으면
                     r=r.right                     #r노드를 우측 자식으로 삽입
             else:                                       #이미 key값이 존재하면 False를 반환
-                return False            
+                return False
 
     def delete_bst_case1(self,parent,node,root): #case 1 : 단말노드의 삭제
-        if parent is None:          
+        if parent is None:
             self.root =None
         else:
             if parent.left==node:
@@ -174,7 +174,7 @@ class BSTMap():
             succp.left=succ.right       #후계자의 오른쪽 자식을 부모노드에 연결
         else:
             succp.right=succ.right      #후게자가 오른쪽자식이면
-        
+
         node.key=succ.key
         node.value=succ.value
         node=succ
@@ -189,7 +189,7 @@ class BSTMap():
             parent=node
             if key<node.key: node =node.left
             else: node=node.right
-        
+
         if node==None:                                      #삭제할 노드가 없을 때
             return None
         if node.left==node and node.right==None:            #case 1 단말노드
@@ -218,7 +218,7 @@ data=[35,18,7,26,12,3,68,22,30,99]
 print("삽입연산 : ", data)     #우선순위 큐에 정렬되지 않은 키를 삽입한다.
 for key in data :
     map.enqueue(key)
-map.display("enqueue() 후 우선순위큐 : ")  
+map.display("enqueue() 후 우선순위큐 : ")
 
 print("\n우선 순위 큐 isEmpty ? :",map.isEmpty())              #우선순위 큐가 비어있는 상태인지 확인한다.
 
@@ -231,7 +231,3 @@ map.display("peek() 후 우선순위 큐 : ")
 print("\nsize() 반환값: ",map.size())
 map.clear()
 map.display("\nclear() 후 우선순위 큐 : ")
-
-
-
-

@@ -1,10 +1,10 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.10.15
 
 1. 목적: 연결된 구조를 활용하는 방법에 대해 실습한다.
 2. 문제 : 6.3절의 연결된 리스트 클래스에 merge()연산을 구현하라
-            리스트 A와 B가 있을 때, A.merge(B)는 연결리스트 A의 맨 뒤에 B를 추가하는 연산이다. 
+            리스트 A와 B가 있을 때, A.merge(B)는 연결리스트 A의 맨 뒤에 B를 추가하는 연산이다.
             A의 길이는 늘어나고 B의 길이는 0이 되도록 하라
 
 3. 방법 : 1. p6.3절의 연결된 리스트 알고리즘을 활용한다.
@@ -73,7 +73,7 @@ class LinkedList:
         before=self.getNode(pos-1)
         if before==None:
             self.head=Node(elem,self.head)
-        else: 
+        else:
             n=Node(elem,before.link)
             before.link=n
     def delete(self,pos):

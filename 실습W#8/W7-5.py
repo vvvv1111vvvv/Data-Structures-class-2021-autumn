@@ -1,24 +1,24 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.04
 
 1. 목적: 탐색을 활용하는 방법에 대해 실습한다.
-2. 문제 : 실습 7.5 : 7.7절에서 구현한 순차탐색 맵을 수정하여 이진탐색 맵으로 구현하라 
+2. 문제 : 실습 7.5 : 7.7절에서 구현한 순차탐색 맵을 수정하여 이진탐색 맵으로 구현하라
 
-3. 방법 : 7.5절에서 구현한 리스트를 이용한 순차 탐색 맵을 수정하여 
+3. 방법 : 7.5절에서 구현한 리스트를 이용한 순차 탐색 맵을 수정하여
         정렬 시킨다, 이진탐색 맵으로 변경한다.
-          
+
 알고리즘:
-#1. 삽입연산: 엔트리 삽입 시 킷값에 따라 위치를 찾아 삽입 
-#2. 삭제연산 : 순서탐색 맵과 동일                       
-#3. 탐색연산 : binaty_search() function을 사용한다.    
-#4. 
+#1. 삽입연산: 엔트리 삽입 시 킷값에 따라 위치를 찾아 삽입
+#2. 삭제연산 : 순서탐색 맵과 동일
+#3. 탐색연산 : binaty_search() function을 사용한다.
+#4.
 '''
 class Entry :
     '''
         이름: 엔트리 클래스
-        목적: 헤시 맵 구현을 위해 사용, 맵은 엔트리의 집합       
-    '''                          
+        목적: 헤시 맵 구현을 위해 사용, 맵은 엔트리의 집합
+    '''
     def __init__(self,key,value):
         self.key = key              # key값
         self.value=value            # value 값
@@ -57,8 +57,8 @@ class BinaryMap:
                     continue
                 elif self.hashFn(self.table[0].key)>=a:
                     self.table.insert(0,x)
-                    
-        
+
+
 
     def hashFn(self, key):
         '''
@@ -75,7 +75,7 @@ class BinaryMap:
     def BinarySearch(self, key):
         '''
         이름 : BinarySearch()
-        목적 : 입력받은 key 값을 hashFn()을 이용해 변환한 뒤, 동일한 인덱스를 찾아 반환 
+        목적 : 입력받은 key 값을 hashFn()을 이용해 변환한 뒤, 동일한 인덱스를 찾아 반환
         '''
         low= 0
         high=self.size()-1
@@ -96,7 +96,7 @@ class BinaryMap:
         for i in range (self.size()):
             if self.hashFn(key)==self.hashFn(self.table[i].key):
                 self.table.pop(i)
-                return 
+                return
 map=BinaryMap()
 map.insert('data','자료')
 map.insert('sturcture','구조')
@@ -111,5 +111,3 @@ print("탐색: sturcture-->", map.BinarySearch('sturcture'))
 
 map.delete("arrary")
 map.display("나만의 단어장:")
-
-

@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.04
 
 1. 목적: 트리의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -49,11 +49,11 @@ class TNode:
         if n is not None:
             self.inorder(n.left)
             print(n.data,end='')
-            self.inorder(n.right)      
+            self.inorder(n.right)
     def postorder(self,n):    #LRV 후위 순회
         if n is not None:
             self.postorder(n.left)
-            self.postorder(n.right)     
+            self.postorder(n.right)
             print(n.data,end='')
     def levelorder(self,root):        #레벨 순회
         self.queue=CircularQueue()    #원형 큐 객체 초기화
@@ -104,7 +104,7 @@ class TNode:
                 self.queue.enqueue(front.right)
             else:
                 flag = True
-    
+
         return True
 
 print("\n[실습 8.2번 문제]")

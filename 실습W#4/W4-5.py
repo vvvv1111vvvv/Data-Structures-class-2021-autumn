@@ -1,13 +1,13 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.09.30
 
 1. 목적 : 스택을 활용하는 방법에 대해 실습한다.
 2. 문제 : p4.5 : 4.4절의 코드를 수정하여 사용자로부터 직접 중위표기 수식을 입력받아 이를 처리하여 결과를 출력하는 프로그램을 작성하라
 
 3. 방법 : 4.4절 에서 만든 후위표기식 연산 프로그램과 중위표기 수식의 후위식 변환 프로그램을 활용
-         
-알고리즘 : 
+
+알고리즘 :
 1. 중위 표기식을 키보드로 입력받는다.
 2. 중위 표기식의 후위 표기 변환함수 Infix2postfix()를 이용해 입력받은 식을 후위 표기식으로 변환
 3. 후위 표기식의 연산 함수 evalPostfix()를 이용해 입력받은 후위표기식을 연산 한 뒤 결과를 반환
@@ -73,9 +73,9 @@ def Infix2Postfix(expr):
     '''
     s1= Stack()                          # 괄호와 연산자 저장 스택
     output = []                          # 후위 표기식 출력 리스트
-    for term in expr:           
+    for term in expr:
         if term in '(':                  # 왼쪽 괄호이면
-            s1.push('(')    
+            s1.push('(')
         elif term in ')':                # 오른쪽 괄호이면
             while not s1.isEmpty():
                 op=s1.pop()
@@ -84,7 +84,7 @@ def Infix2Postfix(expr):
                     output.append(op)
         elif term in '+-*/':             # 연산자이면
             while not s1.isEmpty():      # 우선 순위가 높거나 같은 연산자를
-                op = s1.peek()           # 스택에서 꺼내어 output에 추가 
+                op = s1.peek()           # 스택에서 꺼내어 output에 추가
                 if( precedence(term) <= precedence(op)):
                     output.append(op)
                     s1.pop()
@@ -97,8 +97,8 @@ def Infix2Postfix(expr):
         output.append(s1.pop())          # 모두 output에 추가
 
     return output
-        
-        
+
+
 # 1. 중위 표기식을 키보드로 입력받아 리스트로 변경한다.
 a=list((input().split()))
 

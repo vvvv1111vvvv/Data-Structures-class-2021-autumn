@@ -1,9 +1,9 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.28
 
 1. 목적:  고급정렬의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
-2. 문제 : 실습 12.2: 12.4절의 병합정렬을 순환이 아니라 반복을 이용하여 다시 구현하라, 
+2. 문제 : 실습 12.2: 12.4절의 병합정렬을 순환이 아니라 반복을 이용하여 다시 구현하라,
 3. 방법 : 12.4절의 함와 테스트 코드를 응용한다.
 
 병합정렬: 하나의 리스트를 두개의 균등한 크기로 분할하고, 분할된 부분 리스트를 정렬한다음
@@ -18,7 +18,7 @@
 #6. 데이터 정렬을 위한 함수 merge_sort()를 호출
     #6-1. left와 right사이의 갭을 나타내는 변수 gap 선언및 초기화
     #6-2. gap의 제곱연산을 위한 변수  n의 선언및 초기화
-    #6-3. while문 :merge연산을 종료하는 조건:전체 배열에대해 merge연산이 끝났을때 
+    #6-3. while문 :merge연산을 종료하는 조건:전체 배열에대해 merge연산이 끝났을때
         #6-3-1. 병합연산
         #6-3-2. 분할된 데이터들의 병합이 끝났으면, gap을 증가시킨다
         #6-3-3. n을 1증가
@@ -31,7 +31,7 @@ def merge_sort(A,left,right):
     '''
     gap=1                   #left와 right사이의 갭을 나타내는 변수 gap 선언및 초기화
     n=1                     #gap의 제곱연산을 위한 변수  n의 선언및 초기화
-    while len(A)>2**(n-1):   #merge연산을 종료하는 조건:전체 배열에대해 merge연산이 끝났을때 
+    while len(A)>2**(n-1):   #merge연산을 종료하는 조건:전체 배열에대해 merge연산이 끝났을때
         for i in range(0,len(A)-gap,gap+1):       #for문: 병합연산
             left=i
             right=left+gap
@@ -59,18 +59,17 @@ def merge(A,left,mid,right):
             j,k=j+1,k+1
     if i>mid:   #배열 A가 배열 C에 모두 삽입되고, 배열 B가 남았을때.
         sorted[k:k+right-j+1]=A[j:right+1]
-    else: 
+    else:
         sorted[k:k+mid-i+1]=A[i:mid+1]
-    A[left:right+1]=sorted[left:right+1] 
+    A[left:right+1]=sorted[left:right+1]
 
 
 import random                                #난수 발생함수 randint 사용을 위한 random모듈 import
 sorted=[]                                       #데이터 임시 저장을위한 리스트
 data=[]                                         #데이터 저장을 위한 리스트
-for i in range(8):                             #랜덤한 정수 8개를 데이터에 추가     
+for i in range(8):                             #랜덤한 정수 8개를 데이터에 추가
     data.append(random.randint(1,9999))
 print("정렬 전: ", data)                    #정렬되지 않은 데이터 출력
 sorted=[0]*len(data)                        #데이터 임시 저장을위한 리스트를 0으로 초기화
 merge_sort(data,0,len(data)-1)              #데이터 정렬을 위한 함수 merge_sort()를 호출
 print("정렬 후: ", data)                     #정렬된 데이터 출력
-

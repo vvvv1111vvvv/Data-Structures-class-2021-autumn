@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.18
 
 1. 목적: 그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -11,11 +11,11 @@
 #1. 인접리스트로 graphf를 표현
 #2. 위상정렬을 출력하는 함수 topological_sort_AM(graph)를 호출
 #3. topological_sort_AM(graph)
-    #3-1. 진입차수 정장을 위한 빈 딕셔너리 inDeg 선언 
+    #3-1. 진입차수 정장을 위한 빈 딕셔너리 inDeg 선언
         #3-1-1. graph의 Key값을 key로 가지고, value=0인 딕셔너리값 추가
     #3-2. graph의 key와 value krqtdp 대해 key가 어떤 value의 원소이면 진입차수를 1 추가한다.
     #3-3. 진입차수가 0인 vertex의 리스트를 정의, 진입차수가 0안 key들을 vlist에 append()한다.
-    #3-4. 진입차수가 0인 vertex의 리스트'의 크기가 0이 아닐 동안  vlist에 저장된 vertex를 1개 꺼낸다.  
+    #3-4. 진입차수가 0인 vertex의 리스트'의 크기가 0이 아닐 동안  vlist에 저장된 vertex를 1개 꺼낸다.
     #3-5. graph의 u번째 key에서 반복
         #3-5-1.만약 u가 방금 꺼낸 v와 다르고, v의 진출간선에 u가 존재 한다면
         #3-5-2. 진압차수를 -1 감소, u의 차수가 0이면 vlist에 추가
@@ -37,16 +37,16 @@ def topological_sort_AM(graph):
     for i in graph:             #진입차수가 0안 key들을 vlist에 append()한다.
         if inDeg[i]==0:
             vlist.append(i)
-    while len(vlist)>0:     #'진입차수가 0인 vertex의 리스트'의 크기가 0이 아닐 동안        
+    while len(vlist)>0:     #'진입차수가 0인 vertex의 리스트'의 크기가 0이 아닐 동안
         v=vlist.pop()       #vlist에 저장된 vertex를 1개 꺼낸다.
-        print(v,end=' ') 
-        
+        print(v,end=' ')
+
         for u in graph:     #graph의 u번째 key에서 반복
-            if v!=u:    # 만약 u가 방금 꺼낸 v와 다르고, 
+            if v!=u:    # 만약 u가 방금 꺼낸 v와 다르고,
                 if u in  graph[v]:      #v의 진출간선에 u가 존재 한다면
                     inDeg[u]-=1     #잔압차수를 -1 감소
                     if inDeg[u]==0: #u의 차수가 0이면
-                        vlist.append(u) 
+                        vlist.append(u)
 
 
 

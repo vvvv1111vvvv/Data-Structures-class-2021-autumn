@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.18
 
 1. 목적: 그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -8,7 +8,7 @@
 
 알고리즘
 #1. queue모듈을 import하여 Queue 큐를 사용한다.
-#2. 연결성분검사 함수 find_connected_component()를 정의한다.  
+#2. 연결성분검사 함수 find_connected_component()를 정의한다.
     #2-1. 방문여부를 확인하는 리스트  visited 를 정의
     #2-2. 부분그래프별로 vertex를 저장하는 리스트 colorlist를 정의
     #2-3. vertex에 대하여 연산을 반복한다.
@@ -46,7 +46,7 @@ def find_connected_component(vertex,graph):
     print("연결 성분의 개수 : %d" %len(colorList))    #연결성분의 개수를 출력
     print(colorList)    #방문한 연결성분을 출력
 
-            
+
 
 vertex1=['A','B','C','D','E','F','G','H']
 adjMat1=[[0,1,1,0,0,0,0,0],
@@ -64,5 +64,5 @@ adjMat2=[[0,1,1,0,0],
         [1,0,0,0,0],
         [0,0,0,0,1],
         [0,0,0,1,0]]
-find_connected_component(vertex1,adjMat1)        #연결성분검사함수 호출 
+find_connected_component(vertex1,adjMat1)        #연결성분검사함수 호출
 find_connected_component(vertex2,adjMat2)        #연결성분검사함수 호출

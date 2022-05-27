@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.18
 
 1. 목적: 그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -20,7 +20,7 @@
 '''
 
 
-def dfsST(vertex, graph,v,visited):     
+def dfsST(vertex, graph,v,visited):
     visited[v]=True              #vertex v를 방문함
     for i in range(len(vertex)): #vertex 중에서
         if graph[v][i]==1:       #v와의 edge가 존재하는 i에 대해

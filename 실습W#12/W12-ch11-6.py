@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.25
 
 1. 목적: 가중치그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -10,7 +10,7 @@
 #Dijkstra의 최단경로 알고리즘: 하나의 시작 정점 v에서 다른 모든 정점까지의 최단경로를 찾는 알고리즘
     시작정점 v : 최단경로 탐색의 시작 정점
     집합 S : 시작 정정 v로부터의 최단 경로가 이미 발견된 정점들의 집합
-    dist 배열 : S에 있는 정점만을 거져서 다른 정점으로 가는 최단거리를 기록하는 배열   
+    dist 배열 : S에 있는 정점만을 거져서 다른 정점으로 가는 최단거리를 기록하는 배열
                 Prim의 MST알고리즘과 유사
 
 
@@ -66,9 +66,9 @@ def shortest_path_dijkstra(vtx,adj,start):
     vsize=len(vtx)      #정점의 수
     dist=list(adj[start])   #dist리스트의 생성및 초기화 / start부터 다른 정점 까지의 최단경로거리를 저장하는 리스트
     path= [start]*vsize     #path리스트의 생성및 초기화 / 바로 이전 정점을 저장하는 리스트 / 바로 이전 정점을 따라 시작점으로 가는 경로가 최단경로다.
-    found = [False]*vsize   #found리스트의 생성 및 초기화 / 방문한 정점을 표시하는 리스트 
+    found = [False]*vsize   #found리스트의 생성 및 초기화 / 방문한 정점을 표시하는 리스트
     found[start]=True       #시작정점 start : 이미 찾아짐
-    dist[start]= 0          #시작 정점의 거리 0 
+    dist[start]= 0          #시작 정점의 거리 0
 
     for i in range(vsize):                  #모든 정점에 대해서 반복
         print("step%2d: " %(i+1), dist)     #단계별 dist[] 출력
@@ -90,7 +90,7 @@ weight = [ [0,	    7,		INF,		INF,		3,      10,		INF	],
            [INF,	10,		2,		0,      11,		9,		4   ],
            [3,	    2,	    INF,   	11,		0,      13,		5   ],
            [10,	6,	    INF,		9,      13,		0,		INF	],
-           [INF,   INF,		INF,   	4,		5,		INF,		0   ] ]   
+           [INF,   INF,		INF,   	4,		5,		INF,		0   ] ]
 print("Shortest Path By Dijkstra Algorithm")
 start = 0
 path,dist = shortest_path_dijkstra(vertex,weight,start)       #반환된 path,dist리스트
@@ -98,7 +98,7 @@ path,dist = shortest_path_dijkstra(vertex,weight,start)       #반환된 path,di
 print("\n\n  start -> dst   Dist   Path")
 for end in range(len(vertex)):                              #정점의 개수만큼 반복
     if end != start:                                        #start 가 아닐 때
-        print("[최단경로: %s->%s] %s  %s"%                  
+        print("[최단경로: %s->%s] %s  %s"%
             (vertex[start],vertex[end],dist[end], vertex[end]),end='')  #경로와 거리와 최단경로를 출력
         while (path[end]!=start):                   #path[end]가 start가 아닐동안
             print(" <-%s"%vertex[path[end]],end='') # 경로를 출력

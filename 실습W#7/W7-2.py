@@ -1,12 +1,12 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.10.21
 
 1. 목적: 정렬을 활용하는 방법에 대해 실습한다.
 2. 문제 : 6.3절의 연결된 리스트로 구현한 리스트 클래스 LinkedList에서 리스트 항목의 정렬을 위해 sort()를 구현하라, 정렬 알고리즘으로는 버블정렬을 사용
 
 3. 방법 : 버블정렬 알고리즘을 사용하여 주어진 리스트를 정렬한다.
-          
+
 알고리즘:
 #1. LinkedList의 객체 a를 선언한뒤 수를 입력한다.
 #2. LinkedList클래스의 sort() 함수를 호출한다.
@@ -37,7 +37,7 @@ class LinkedList():
         while not node == None:
             print(node.data,end=' ')
             node=node.link
-  
+
         print()
     def getNode(self,pos):
         if pos<0: return None
@@ -65,7 +65,7 @@ class LinkedList():
         if before==None:
             n=Node(data,self.head)
             self.head=n
-        else: 
+        else:
             n=Node(data,before.link)
             before.link=n
     def delete(self, pos):
@@ -86,10 +86,10 @@ class LinkedList():
                     self.replace(i+1,a1)
                     c=True
                     s.display()
-            if c==False:                
+            if c==False:
                 return
-            
-            
+
+
 
 
 

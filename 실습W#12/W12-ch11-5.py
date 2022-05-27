@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.25
 
 1. 목적: 가중치그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -73,7 +73,7 @@ def MaxSTKruskal(vertex,adj):
         for j in range(i+1,vsize):
             if adj[i][j]!=None:
                 eList.append((i,j,adj[i][j])) #튜플로 간선과 가중치를 eList에 저장, i,j 는 인덱스
-    
+
     #간선리스트의 가중치를 내림차순으로 정렬: 람다함수 사용
     eList.sort(key=lambda e:e[2],reverse=True)  #sort key = e[2], reverse연산을 한다.
     sum=0       # 가중치의 합
@@ -96,7 +96,7 @@ weight = [ [None,	29,		None,	None,	None,   10,		None],
            [None,	None,   12,		None,	22,		None,	18  ],
            [None,	None,	None,   22,		None,	27,		25  ],
            [10,	None,	None,	None,   27,		None,	None],
-           [None,  15,		None,   18,		25,		None,	None]]    
+           [None,  15,		None,   18,		25,		None,	None]]
 
 print("MaxST By Kruskal's Algorithm")
 MaxSTKruskal(vertex, weight)      #MaxSTKruskal 함수 호출, 매개변수 vertex,weight

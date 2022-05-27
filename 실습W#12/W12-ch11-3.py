@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.11.25
 
 1. 목적: 가중치그래프의 개념과 용어를 이해하고, 활용하는 방법에 대해 실습한다.
@@ -32,7 +32,7 @@ import heapq   #보통 리스트를 마치 최소 힙처럼 다룰 수 있도록
                 #빈 리스트를 생성한 뒤, heapq모듈의 함수를 호출할 때 마다
                 #리스트를인자로 넘긴다.
                 #정리: heapq모듈을 통해서 원소를 추가하거나 삭제한 리스트가 그냥 최소 힙\
-                
+
 
 
 parent=[]       #각노드의 부모노드 인덱스
@@ -82,7 +82,7 @@ def MSTKruskal(vertex,adj):
         for j in range(i+1,vsize):
             if adj[i][j]!=None:
                 heapq.heappush(eList,(adj[i][j],i,j)) #튜플로 간선과 가중치를 heapq모듈의 heappush 메소드를 이용해 eList에 저장, (i,j 는 인덱스)
-    
+
     #간선리스트의 가중치를 내림차순으로 정렬: 람다함수 사용
 
     sum=0       # 가중치의 합
@@ -105,11 +105,7 @@ weight = [ [None,	29,		None,	None,	None,   10,		None],
            [None,	None,   12,		None,	22,		None,	18  ],
            [None,	None,	None,   22,		None,	27,		25  ],
            [10,	None,	None,	None,   27,		None,	None],
-           [None,  15,		None,   18,		25,		None,	None]]    
+           [None,  15,		None,   18,		25,		None,	None]]
 
 print("MST By Kruskal's Algorithm")
 MSTKruskal(vertex, weight)      #MSTKruskal 함수 호출, 매개변수 vertex,weight
-
-
-
-

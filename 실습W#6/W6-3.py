@@ -1,5 +1,5 @@
 '''
-작성자 : 박수영 2018930012 07mak8mgt@office.uos.ac.kr
+작성자 : vvvv1111vvvv
 작성일 : 2021.10.15
 
 1. 목적: 연결된 구조를 활용하는 방법에 대해 실습한다.
@@ -64,7 +64,7 @@ class LinkedQueue:
         if n==None:
             return None
         else: n.data=elem
-        
+
     def find(self,elem):
         n = self.head
         while n is not None:
@@ -77,7 +77,7 @@ class LinkedQueue:
     def enqueue(self, elem):
         if self.isEmpty():
             self.front=self.rear=Node(elem,None)
-        else: 
+        else:
             n=Node(elem,None)
             self.rear.link=n
             self.rear=n
@@ -89,7 +89,7 @@ class LinkedQueue:
             if self.front== None:
                 self.rear=None
             return da
-    
+
 
 #3. enqueue()연산을 한뒤 dequeue()연산을 한다.
 A=LinkedQueue()
@@ -101,5 +101,3 @@ for i in range(2):
 
 #4 결과를 display()로 출력한다
 A.display()
-
-
